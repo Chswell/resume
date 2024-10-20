@@ -1,8 +1,8 @@
 import { Box, Container, Divider } from '@mui/material';
-import MailSvg from '../../components/iconsSvg/MailSvg';
-import TgSvg from '../../components/iconsSvg/TgSvg';
-import VkSvg from '../../components/iconsSvg/VkSvg';
-import HhSvg from '../../components/iconsSvg/HhSvg';
+import MailSvg from '~/components/iconsSvg/MailSvg';
+import TgSvg from '~/components/iconsSvg/TgSvg';
+import VkSvg from '~/components/iconsSvg/VkSvg';
+import HhSvg from '~/components/iconsSvg/HhSvg';
 import styles from './Footer.module.scss';
 
 const Footer = () => {

@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import styles from './Memes.module.scss';
-import img1 from '../../../assets/memes/1.png';
-import img2 from '../../../assets/memes/2.gif';
-import img3 from '../../../assets/memes/3.png';
-import img4 from '../../../assets/memes/4.png';
-import img5 from '../../../assets/memes/5.png';
-import img6 from '../../../assets/memes/6.png';
-import img7 from '../../../assets/memes/7.png';
-import img8 from '../../../assets/memes/8.png';
-import img9 from '../../../assets/memes/9.gif';
-import img10 from '../../../assets/memes/10.png';
-import img11 from '../../../assets/memes/11.gif';
+import img1 from '~/assets/memes/1.png';
+import img2 from '~/assets/memes/2.gif';
+import img3 from '~/assets/memes/3.png';
+import img4 from '~/assets/memes/4.png';
+import img5 from '~/assets/memes/5.png';
+import img6 from '~/assets/memes/6.png';
+import img7 from '~/assets/memes/7.png';
+import img8 from '~/assets/memes/8.png';
+import img9 from '~/assets/memes/9.gif';
+import img10 from '~/assets/memes/10.png';
+import img11 from '~/assets/memes/11.gif';
 
 interface ITooltipProps {
   position: { x: number; y: number };

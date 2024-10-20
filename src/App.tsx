@@ -8,15 +8,15 @@ import { Navigate, useLocation, useRoutes } from 'react-router-dom';
 function App() {
   const element = useRoutes([
     {
-      path: '/resume',
+      path: '/',
       element: <HomePage />
     },
     {
-      path: '/resume/about',
+      path: '/about',
       element: <AboutPage />
     },
     {
-      path: '/resume/contacts',
+      path: '/contacts',
       element: <ContactsPage />
     },
     {

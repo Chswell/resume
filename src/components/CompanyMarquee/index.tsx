@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import styles from './CompanyMerquee.module.scss';
 
-import wb from '../../assets/1.png';
-import alfa from '../../assets/2.png';
-import avito from '../../assets/3.png';
-import tbank from '../../assets/4.png';
-import yandex from '../../assets/5.png';
-import toyota from '../../assets/6.png';
-import vk from '../../assets/7.png';
-import kaspersky from '../../assets/8.png';
+import wb from '~/assets/1.png';
+import alfa from '~/assets/2.png';
+import avito from '~/assets/3.png';
+import tbank from '~/assets/4.png';
+import yandex from '~/assets/5.png';
+import toyota from '~/assets/6.png';
+import vk from '~/assets/7.png';
+import kaspersky from '~/assets/8.png';
 
 const CompanyMarquee = () => {
   return (

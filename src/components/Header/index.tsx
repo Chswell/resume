@@ -14,12 +14,12 @@ const Header: React.FC = () => {
           </Link>
         </Box>
         <Box className={styles.buttons}>
-          <Link to={'/resume/about'}>
+          <Link to={'/about'}>
             <Button className={styles.buttonAbout} color={'inherit'} variant={'text'}>
               About
             </Button>
           </Link>
-          <Link to={'/resume/contacts'}>
+          <Link to={'/contacts'}>
             <Button className={styles.buttonContacts} color={'inherit'} variant={'outlined'}>
               Contacts
             </Button>

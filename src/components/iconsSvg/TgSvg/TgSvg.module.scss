@@ -1,0 +1,10 @@
+.tg {
+  background-color: #736f6f;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all .2s ease;
+  &:hover {
+    background-color: #a59c9c;
+  }
+}

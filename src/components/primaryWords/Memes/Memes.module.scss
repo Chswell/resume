@@ -1,0 +1,56 @@
+
+.memes {
+  position: relative;
+  color: #25252c;
+  background-color: #f89027;
+  padding: 0 1%;
+  cursor: none;
+
+  .notification {
+    position: absolute;
+    background-color: #ff0000;
+    height: 10px;
+    width: 10px;
+    border-radius: 15px;
+    right: -5px;
+    top: -5px;
+  }
+}
+
+.container {
+  background-color: #f89027;
+  width: calc(5.2em);
+  height: calc(1.5em);
+  display: inline-block;
+}
+
+.flip {
+  height: calc(1.5em);
+  width: calc(5.2em);
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: -0.33em;
+}
+
+.flip > div > div {
+  color: #25252c;
+  display: inline-block;
+}
+
+.flip div:first-child {
+  animation: show 1s ease;
+}
+
+.notification {
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes show {
+  0% {
+    margin-left: calc(-40.6em + 8 * (100vw - 50px) / 1024);
+  }
+  100% {
+    margin-left: 0px;
+  }
+}

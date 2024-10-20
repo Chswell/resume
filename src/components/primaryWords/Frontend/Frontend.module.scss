@@ -1,0 +1,41 @@
+.frontend {
+  color: #25252c;
+  background-color: #f89027;
+  padding: 0 1%;
+}
+
+.container {
+  background-color: #f89027;
+  width: calc(7.5em);
+  height: calc(1.5em);
+  display: inline-block;
+}
+
+.flip {
+  height: calc(1.5em);
+  width: calc(7.5em);
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: -0.33em;
+}
+
+.flip > div > div {
+  color: #25252c;
+  display: inline-block;
+}
+
+.flip div:first-child {
+  animation: show 1.5s ease;
+}
+
+@keyframes show {
+  0% {
+    margin-left: calc(-16.6em + 8 * (100vw - 50px) / 1024);
+  }
+  10% {
+    margin-left: calc(-16.6em + 8 * (100vw - 50px) / 1024);
+  }
+  100% {
+    margin-left: 0px;
+  }
+}

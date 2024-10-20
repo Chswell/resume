@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #25252c;
+  background-image: url("https://cdn.prod.website-files.com/6674f0cdb5b7b401612cf015/6674f0cdb5b7b401612cf065_noise-50.avif");
+  margin: 0;
+  padding: 0;
+}
+
+.mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: center;
+  font-stretch: ultra-expanded;
+  color: #fff;
+  font-size: calc(1.5em + 8 * (100vw - 320px) / 880);
+  font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 75dvh;
+}
+
+
+

@@ -1,0 +1,18 @@
+
+.marqueeText {
+  padding: 0 2%;
+
+  span {
+    color: #736f6f;
+    font-family: "Lexend Tera", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: calc(10px + 4 * ((100vw - 320px) / (1280 - 320)));
+    a {
+      font-weight: 400;
+      color: #736f6f;
+      text-decoration: none;
+    }
+  }
+}

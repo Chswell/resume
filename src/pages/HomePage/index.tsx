@@ -15,9 +15,8 @@ const HomePage = () => {
       <Container>
         <Box className={styles.mainText}>
           <div>
-            I'm a <Frontend /> developer
-            <br />
-            from Kemerovo, Russia. I write code, love cat <Memes /> and study <NewTechnologies />
+            I'm a <Frontend /> developer from Kemerovo, Russia. I write <br />code, love cat <Memes /> <br />and
+            study <br /><NewTechnologies />
           </div>
         </Box>
       </Container>

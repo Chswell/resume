@@ -19,11 +19,11 @@ const Header: React.FC = () => {
               About
             </Button>
           </Link>
-          <Link to={'/contacts'}>
+          <a href={'https://kemerovo.hh.ru/resume_converter/Стрельцов%20Никита.pdf?hash=6d422e37ff0913a25b0039ed1f4c7a46334f4f&type=pdf&hhtmSource=resume&hhtmFrom='}>
             <Button className={styles.buttonContacts} color={'inherit'} variant={'outlined'}>
-              Contacts
+              Download PDF
             </Button>
-          </Link>
+          </a>
         </Box>
       </Box>
       <Divider variant="middle" color={'#454547'} />

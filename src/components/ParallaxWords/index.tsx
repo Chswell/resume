@@ -7,12 +7,13 @@ const words = [
   'JavaScript',
   'CSS',
   'HTML',
-  'Node',
-  'GraphQL',
+  'React Native',
+  'Vite',
   'Framer Motion',
-  'Redux',
-  'Next.js',
+  'Modx',
+  'Webpack',
   'TypeScript',
+  'Git',
 ];
 
 const ParallaxWords: React.FC = () => {
@@ -113,13 +114,12 @@ const ParallaxWords: React.FC = () => {
               position: 'absolute',
               whiteSpace: 'nowrap',
               fontSize: isHighlighted ? `3rem` : `${1 + index * 0.2}rem`,
-              color: isHighlighted ? '#ae641e' : (index < words.length / 2 ? '#615E5E' : '#4A4A4A'),
+              color: isHighlighted ? 'rgba(97,94,94,0.33)' : (index < words.length / 2 ? 'rgba(97,94,94,0.23)' : 'rgba(74,74,74,0.27)'),
               top: `${initialY}vh`,
               left: `${initialX}vw`,
               transform: `translate(${x}vw, ${y}vh)`,
               pointerEvents: 'none',
               transition: 'color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out',
-              textShadow: isHighlighted ? '0 0 10px rgba(255, 215, 0, 0.8)' : 'none',
             }}
           >
             {word}

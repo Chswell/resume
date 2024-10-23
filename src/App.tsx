@@ -21,7 +21,7 @@ function App() {
     },
     {
       path: '*',
-      element: <Navigate to="/resume" replace />
+      element: <Navigate to="/" replace />
     }
   ]);
 

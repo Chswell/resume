@@ -10,6 +10,8 @@ const RandomListItem: React.FC<RandomListItemProps> = ({ text }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const currentRef = ref.current; // Сохраняем текущее значение ref
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,13 +28,13 @@ const RandomListItem: React.FC<RandomListItemProps> = ({ text }) => {
       { threshold: 0.1 } // Порог видимости 10% для более чувствительного срабатывания
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [controls]);

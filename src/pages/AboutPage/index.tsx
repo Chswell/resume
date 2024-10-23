@@ -15,33 +15,7 @@ const AboutPage: React.FC = () => {
         <Box sx={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, zIndex: -11 }}>
           <ParallaxWords />
         </Box>
-        <Box>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>
-        </Box>
+
       </Container>
       <Footer />
       <PageLoader />

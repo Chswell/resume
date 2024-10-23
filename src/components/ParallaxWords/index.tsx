@@ -1,5 +1,3 @@
-// ParallaxEffect.tsx
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
@@ -9,16 +7,15 @@ const words = [
   'JavaScript',
   'CSS',
   'HTML',
-  'React Native',
-  'Vite',
+  'Node',
+  'GraphQL',
   'Framer Motion',
-  'Modx',
-  'Webpack',
+  'Redux',
+  'Next.js',
   'TypeScript',
-  'Git'
 ];
 
-const ParallaxEffect: React.FC = () => {
+const ParallaxWords: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [positions, setPositions] = useState<{ x: number; y: number }[]>([]);
   const wordRefs = useRef<(HTMLDivElement | null)[]>([]); // Для хранения ссылок на слова
@@ -35,50 +32,55 @@ const ParallaxEffect: React.FC = () => {
     };
   }, []);
 
-  const generateRandomPosition = (buffer: number, positions: { x: number; y: number }[]) => {
+  const generateRandomPosition = (buffer: number, positions: { x: number; y: number }[], wordWidth: number) => {
     let position: { x: number; y: number };
     let isValidPosition: boolean;
 
+    const maxX = 80 - 2 * buffer - wordWidth;
+    const maxY = 80 - 2 * buffer;
+
     do {
       position = {
-        x: Math.random() * (100 - 2 * buffer) + buffer,
-        y: Math.random() * (100 - 2 * buffer) + buffer
+        x: Math.random() * maxX + buffer,
+        y: Math.random() * maxY + buffer,
       };
 
+      // Проверка на достаточное расстояние до других слов
       isValidPosition = !positions.some((existingPosition) => {
         const distance = Math.sqrt(
-          Math.pow(position.x - existingPosition.x, 2) + Math.pow(position.y - existingPosition.y, 2)
+          Math.pow(position.x - existingPosition.x, 2) +
+          Math.pow(position.y - existingPosition.y, 2)
         );
         return distance < buffer;
       });
-
     } while (!isValidPosition);
 
     return position;
   };
 
   useEffect(() => {
-    const buffer = 15; // Буфер, чтобы избежать появления у краев
+    const buffer = 10; // Буфер для избежания появления у краев
     const randomPositions: { x: number; y: number }[] = [];
 
-    // Генерируем позиции для каждого слова
+    // Генерация случайных позиций для слов
     for (let i = 0; i < words.length; i++) {
-      randomPositions.push(generateRandomPosition(buffer, randomPositions));
+      const wordElement = wordRefs.current[i];
+      const wordWidth = wordElement ? wordElement.offsetWidth / window.innerWidth * 100 : 0;
+      randomPositions.push(generateRandomPosition(buffer, randomPositions, wordWidth));
     }
 
     setPositions(randomPositions);
   }, []);
 
-  // Проверка, находится ли курсор в области вокруг слова
   const isCursorNearWord = (wordIndex: number): boolean => {
     if (!wordRefs.current[wordIndex]) return false;
 
     const wordRect = wordRefs.current[wordIndex]?.getBoundingClientRect();
     if (!wordRect) return false;
 
-    const buffer = 30; // Увеличиваем область вокруг слова
+    const buffer = 30; // Увеличенная область вокруг слова
 
-    // Проверяем, находится ли курсор в области вокруг слова
+    // Проверка, находится ли курсор в области вокруг слова
     return (
       mousePosition.x >= wordRect.left - buffer &&
       mousePosition.x <= wordRect.right + buffer &&
@@ -88,41 +90,44 @@ const ParallaxEffect: React.FC = () => {
   };
 
   return (
-    <>
-      {words.map((word, index) => {
-        const { x: initialX = 0, y: initialY = 0 } = positions[index] || {};
+    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+      {positions.length > 0 && words.map((word, index) => {
+        const { x: initialX, y: initialY } = positions[index];
 
-        const x = ((mousePosition.x / window.innerWidth) * 15 - 7.5 + initialX) * 0.1;
-        const y = ((mousePosition.y / window.innerHeight) * 15 - 7.5 + initialY) * 0.1;
+        // Добавляем depthFactor для разной скорости движения
+        const depthFactor = 0.03 + index * 0.02;
 
-        // Подсвечиваем слово, если курсор рядом
+        const x = ((mousePosition.x / window.innerWidth) * 10 - 5 + initialX) * depthFactor;
+        const y = ((mousePosition.y / window.innerHeight) * 10 - 5 + initialY) * depthFactor;
+
         const isHighlighted = isCursorNearWord(index);
 
         return (
           <motion.div
             key={word}
-            ref={(el) => (wordRefs.current[index] = el)} // Сохраняем ссылку на элемент
+            ref={(el) => (wordRefs.current[index] = el)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             style={{
               position: 'absolute',
               whiteSpace: 'nowrap',
               fontSize: isHighlighted ? `3rem` : `${1 + index * 0.2}rem`,
-              color: isHighlighted ? '#ae641e' : (index < words.length / 2 ? '#615E5E' : '#4A4A4A'), // Цвет текста
+              color: isHighlighted ? '#ae641e' : (index < words.length / 2 ? '#615E5E' : '#4A4A4A'),
               top: `${initialY}vh`,
               left: `${initialX}vw`,
               transform: `translate(${x}vw, ${y}vh)`,
-              pointerEvents: 'none', // Отключаем взаимодействие
-              transition: 'color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out'
+              pointerEvents: 'none',
+              transition: 'color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out',
+              textShadow: isHighlighted ? '0 0 10px rgba(255, 215, 0, 0.8)' : 'none',
             }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
           >
             {word}
           </motion.div>
         );
       })}
-    </>
+    </div>
   );
 };
 
-export default ParallaxEffect;
+export default ParallaxWords;

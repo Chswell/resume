@@ -47,6 +47,7 @@ const RandomListItem: React.FC<RandomListItemProps> = ({ text }) => {
       initial={{ opacity: 0, x: initialX, y: initialY }}
       animate={controls}
       style={{ marginBottom: '16px', textAlign: 'start' }}
+      className={'link'}
     >
       {text}
     </motion.div>

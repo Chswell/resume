@@ -42,10 +42,24 @@ const AboutPage: React.FC = () => {
           </Box>
 
           <Container className={styles.container}>
-            <div className={styles.title} style={{ textAlign: 'center', marginTop: '10dvh' }}>My skills</div>
+            <motion.div
+              className={styles.title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, ease: 'ease' }}
+            >
+              My skills
+            </motion.div>
             <Box className={styles.containerListItems}>
               <Box className={styles.listItems}>
-                <motion.p className={styles.subTitle}>Hard</motion.p>
+                <motion.p
+                  className={styles.subTitle}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2, ease: 'ease' }}
+                >
+                  Hard
+                </motion.p>
                 {hardSkills.map((item, index) => (
                   <RandomListItem key={`item-${index}`} text={item} />
                 ))}
@@ -53,13 +67,19 @@ const AboutPage: React.FC = () => {
             </Box>
             <Box className={styles.containerListItems}>
               <Box className={styles.listItems}>
-                <motion.p className={styles.subTitle}>Soft</motion.p>
+                <motion.p
+                  className={styles.subTitle}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2, ease: 'ease' }}
+                >
+                  Soft
+                </motion.p>
                 {softSkills.map((item, index) => (
                   <RandomListItem key={`item-${index + 8}`} text={item} />
                 ))}
               </Box>
             </Box>
-
           </Container>
         </Container>
         <Footer />
@@ -70,3 +90,4 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
+

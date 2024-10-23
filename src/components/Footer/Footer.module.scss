@@ -6,7 +6,7 @@
   color: #736f6f;
   min-height: 150px;
   height: 20dvh;
-  font-size: calc(10px + 4 * ((100vw - 320px) / (1280 - 320)));
+  font-size: clamp(10px, 0.8vw, 20px);
 }
 
 .copyright {
@@ -63,16 +63,16 @@
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   .footerContainer { flex-direction: row; }
   .leftBlock { align-items: flex-start; }
-  .rightBlock { align-items: flex-start; }
+  .rightBlock { align-items: flex-end; }
 }
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
   .footerContainer { flex-direction: row; }
   .leftBlock { align-items: flex-start; }
-  .rightBlock { align-items: flex-start; }
+  .rightBlock { align-items: flex-end; }
 }
 
 @media screen and (min-width: 1200px) {
   .footerContainer { flex-direction: row; }
   .leftBlock { align-items: flex-start; }
-  .rightBlock { align-items: flex-start; }
+  .rightBlock { align-items: flex-end; }
 }

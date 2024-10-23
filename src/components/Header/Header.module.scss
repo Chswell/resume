@@ -21,7 +21,7 @@
 
     .buttonAbout {
       color: #f89027;
-      font-size: calc(10px + 4 * ((100vw - 320px) / (1280 - 320)));
+      font-size: clamp(10px, 0.8vw, 20px);
       font-family: "Lexend Tera", sans-serif;
       font-optical-sizing: auto;
       font-weight: 600;
@@ -30,7 +30,7 @@
 
     .buttonContacts {
       color: #ffffff;
-      font-size: calc(10px + 4 * ((100vw - 320px) / (1280 - 320)));
+      font-size: clamp(10px, 0.8vw, 20px);
       font-family: "Lexend Tera", sans-serif;
       font-optical-sizing: auto;
       font-weight: 200;

@@ -19,7 +19,7 @@ body {
   text-align: center;
   font-stretch: ultra-expanded;
   color: #fff;
-  font-size: calc(1.5em + 8 * (100vw - 320px) / 880);
+  font-size: clamp(25px, 2vw, 50px);
   font-family: "Notable", sans-serif;
   font-weight: 400;
   font-style: normal;

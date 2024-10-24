@@ -4,7 +4,7 @@ import Footer from '~/components/Footer';
 import PageLoader from '~/components/PageLoader';
 import Header from '~/components/Header';
 import ParallaxWords from '~/components/ParallaxWords';
-import RandomListItem from '~/components/RandomListItem'; // Импортируем новый компонент
+import RandomListItem from '~/components/RandomListItem';
 import styles from './AboutPage.module.scss';
 import { motion } from 'framer-motion';
 

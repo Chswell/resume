@@ -13,7 +13,7 @@ const hardSkills = [
   'React',
   'React Native',
   'JavaScript',
-  'Modx',
+  'Mobx',
   'Vite',
   'Webpack',
   'Framer Motion',

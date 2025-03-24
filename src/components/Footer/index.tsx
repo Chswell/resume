@@ -1,4 +1,5 @@
 import { Box, Container, Divider } from '@mui/material';
+import LeetcodeSvg from '~/components/iconsSvg/LeetcodeSvg';
 import MailSvg from '~/components/iconsSvg/MailSvg';
 import TgSvg from '~/components/iconsSvg/TgSvg';
 import VkSvg from '~/components/iconsSvg/VkSvg';
@@ -17,15 +18,16 @@ const Footer = () => {
               <TgSvg />
               <VkSvg />
               <HhSvg />
+              <LeetcodeSvg />
             </Box>
           </Box>
           <Box className={styles.rightBlock}>
-            <Box style={{}}>
+            <Box>
               <a href={'mailto:i@chswe11.ru'} className={'link'}>
                 <MailSvg /> i@chswe11.ru
               </a>
             </Box>
-            <Box style={{}}>
+            <Box>
               <a href={'mailto:nikitastreltsov324@gmail.com'} className={'link'}>
                 <MailSvg /> nikitastreltsov324@gmail.com
               </a>

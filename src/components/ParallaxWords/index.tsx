@@ -10,7 +10,7 @@ const words = [
   'React Native',
   'Vite',
   'Framer Motion',
-  'Modx',
+  'Mobx',
   'Webpack',
   'TypeScript',
   'Git',

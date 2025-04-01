@@ -2,7 +2,6 @@ import { Box, Container, Divider } from '@mui/material';
 import LeetcodeSvg from '~/components/iconsSvg/LeetcodeSvg';
 import MailSvg from '~/components/iconsSvg/MailSvg';
 import TgSvg from '~/components/iconsSvg/TgSvg';
-import VkSvg from '~/components/iconsSvg/VkSvg';
 import HhSvg from '~/components/iconsSvg/HhSvg';
 import styles from './Footer.module.scss';
 
@@ -16,7 +15,6 @@ const Footer = () => {
             <Box className={styles.copyright}>Copyright © 2024 Streltsov Nikita</Box>
             <Box className={styles.socials}>
               <TgSvg />
-              <VkSvg />
               <HhSvg />
               <LeetcodeSvg />
             </Box>
